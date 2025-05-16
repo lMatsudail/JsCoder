@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto JS</title>
+    <title>inKnovation Personalizados</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Vinculamos el CSS -->
 </head>
 <body>
-    <h1>Bienvenido a mi proyecto</h1>
-    <script src="script.js"></script>
+    <header>
+        <!-- Logo principal -->
+        <img src="img/Logo/INKNOVATION_Mesa de trabajo 1.png" alt="Logo inKnovation" class="logo">
+
+        <div class="header-texto">
+            <h1>inKnovation Personalizados</h1>
+            <p>¡Camisetas, vasos, termos y más!</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de productos -->
+        <h2>Nuestros Productos</h2>
+        <section id="productos">
+            <!-- Los productos se agregarán aquí con JS -->
+        </section>
+
+        <!-- Sección del carrito de compras -->
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito">
+            </ul>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form id="formularioContacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025 inKnovation Personalizados. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Vinculamos el JavaScript -->
 </body>
 </html>
