@@ -8,9 +8,19 @@ const categorias = [
     {
         nombre: "Camisas",
         productos: [
-            { nombre: "Camiseta Capitan America", precio: 80000, imagen: "img/Camisas/Cap.jpg" },
-            { nombre: "Camiseta Negra", precio: 11000, imagen: "img/camiseta_negra.jpg" },
-            { nombre: "Camiseta Manga Larga", precio: 12000, imagen: "img/camiseta_manga_larga.jpg" }
+            { nombre: "Camiseta Cap America", precio: 40000, imagen: "img/Camisas/Cap.jpg" },
+            { nombre: "Camiseta Negra Batman", precio: 40000, imagen: "img/Camisas/Batman.jpg" },
+            { nombre: "Camiseta GreenArow ", precio: 32000, imagen: "img/Camisas/Arrow.jpg" },
+            { nombre: "Camiseta Azul Cyclope", precio: 32000, imagen: "img/Camisas/Cyclope.jpg" },
+            { nombre: "Camiseta Gris Deadpool ", precio: 42000, imagen: "img/Camisas/Deadpool.jpg" },
+            { nombre: "Camiseta Roja Ironman", precio: 32000, imagen: "img/Camisas/Ironman.jpg" },
+            { nombre: "Camiseta Wolverine", precio: 32000, imagen: "img/Camisas/Wolverine.jpg" },
+            { nombre: "Camiseta Amarilla Flash", precio: 32000, imagen: "img/Camisas/Flash.jpg" },
+            { nombre: "Camiseta Roja M Roshi ", precio: 52000, imagen: "img/Camisas/Roshi.jpg" },
+            { nombre: "Camiseta DR Strange ", precio: 42000, imagen: "img/Camisas/Drstrange.jpg" },
+            { nombre: "Camiseta Roja Goku ", precio: 62000, imagen: "img/Camisas/Goku.jpg" },
+            { nombre: "Camiseta Azul Rocky", precio: 32000, imagen: "img/Camisas/Arrow.jpg" }
+
         ]
     },
     {
