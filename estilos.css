@@ -46,11 +46,14 @@ header {
     font-size: 1.5em;
 }
 
+/* Grilla de productos dentro de cada categoría */
 .productos-categoria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 0 20px 20px 20px; /* Solo padding lateral y abajo */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Cuadro de producto */
@@ -64,13 +67,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 340px;
+    height: 420px; /* Ajusta la altura para imágenes grandes y descripciones */
     box-sizing: border-box;
     transition: box-shadow 0.2s;
-}
-
-.producto:hover {
-    box-shadow: 0 4px 16px rgba(76,175,80,0.15);
+    justify-content: flex-start;
+    min-width: 0; /* Evita que se desborde la grilla */
 }
 
 /* Imagen del producto */
@@ -81,6 +82,7 @@ header {
     margin-bottom: 12px;
     border-radius: 6px;
     background: #f1f1f1;
+    flex-shrink: 0;
 }
 
 /* Nombre del producto */
@@ -88,6 +90,17 @@ header {
     margin: 0 0 8px 0;
     font-size: 1.1em;
     color: #333;
+    word-break: break-word;
+}
+
+/* Descripción del producto */
+.descripcion-producto {
+    font-size: 0.95em;
+    color: #555;
+    margin: 8px 0;
+    min-height: 40px;
+    word-break: break-word;
+    flex-grow: 1;
 }
 
 /* Precio */
@@ -97,24 +110,10 @@ header {
     font-weight: bold;
 }
 
-.producto button {
-    margin-top: auto;
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.producto button:hover {
-    background-color: #388e3c;
-}
-
-/* Botón multicolor para agregar al carrito */
+/* Botón */
+.producto button,
 .producto button.agregar-carrito {
-    margin-top: auto;
+    margin-top: 8px;
     padding: 8px 16px;
     background: linear-gradient(90deg, #ff9800, #e91e63, #3f51b5, #4caf50);
     background-size: 300% 100%;
