@@ -77,7 +77,7 @@ const categorias = [
             { 
                 nombre: "Camiseta Azul Rocky", 
                 precio: 32000, 
-                imagen: "img/Camisas/Arrow.jpg",
+                imagen: "img/Camisas/Rocky.jpg",
                 descripcion: "Camiseta azul inspirada en Rocky, para campeones."
             }
         ]
