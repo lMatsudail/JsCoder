@@ -1,10 +1,28 @@
-/* Estilos generales */
+/* Google Fonts: Roboto y Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Aplica las fuentes al body y títulos */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background: linear-gradient(
+        180deg,
+        rgba(255,152,0,0.18) 0%,      /* Naranja claro arriba */
+        rgba(63,81,181,0.18) 40%,     /* Azul al medio */
+        rgba(76,175,80,0.18) 70%,     /* Verde más abajo */
+        rgba(233,30,99,0.18) 100%     /* Rosado abajo */
+    );
+    background-size: 200% 200%;
     color: #333;
+    animation: fondoAnimado 12s ease-in-out infinite;
+}
+
+/* Animación suave del fondo */
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Encabezado */
@@ -46,6 +64,17 @@ header {
     font-size: 1.5em;
 }
 
+/* Centra los títulos de las categorías */
+.categoria > h3 {
+    text-align: center;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 18px;
+    font-size: 1.4em;
+    color: #222;
+    letter-spacing: 1px;
+}
+
 /* Grilla de productos dentro de cada categoría */
 .productos-categoria {
     display: grid;
@@ -67,11 +96,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 420px; /* Ajusta la altura para imágenes grandes y descripciones */
+    height: 480px; /* Más alto para más contenido */
+    width: 260px;  /* Más ancho para evitar desbordes */
     box-sizing: border-box;
     transition: box-shadow 0.2s;
     justify-content: flex-start;
-    min-width: 0; /* Evita que se desborde la grilla */
+    min-width: 0;
+    overflow: hidden;
 }
 
 /* Imagen del producto */
@@ -131,34 +162,110 @@ header {
     box-shadow: 0 4px 16px rgba(76,175,80,0.15);
 }
 
-/* Sección del carrito */
-#carrito {
-    padding: 20px;
-    background-color: #f1f1f1;
-}
-
-#lista-carrito {
-    list-style: none;
-    padding: 0;
-}
-
-#lista-carrito li {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-}
-
-#vaciar-carrito {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
+/* Botón de finalizar compra igual al de agregar al carrito */
+#finalizar-compra {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #ff9800, #e91e63, #3f51b5, #4caf50);
+    background-size: 300% 100%;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-position 0.5s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+#finalizar-compra:hover {
+    background-position: right center;
+    box-shadow: 0 4px 16px rgba(76,175,80,0.15);
+}
+
+/* Botón de vaciar carrito igual al de agregar al carrito y finalizar compra */
+#vaciar-carrito {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #ff9800, #e91e63, #3f51b5, #4caf50);
+    background-size: 300% 100%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-position 0.5s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 #vaciar-carrito:hover {
-    background-color: #d32f2f;
+    background-position: right center;
+    box-shadow: 0 4px 16px rgba(76,175,80,0.15);
+}
+
+/* Sección del carrito */
+#carrito {
+    padding: 32px 32px 32px 32px; /* Aumenta el padding lateral */
+    background-color: #f1f1f1;
+    margin: 40px auto 0 auto;
+    max-width: 700px; /* Un poco más ancho */
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título del carrito centrado y más grande */
+#carrito h2 {
+    text-align: center;
+    font-size: 1.7em;
+    margin-bottom: 18px;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+/* Lista del carrito más ancha y con espacio */
+#lista-carrito {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto 18px auto;
+    list-style: none;
+    padding: 0 10px; /* Espacio interno a la lista */
+    box-sizing: border-box;
+}
+
+/* Ítems del carrito: botón eliminar (cesta) justificado a la derecha */
+#lista-carrito li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Esto lleva la papelera a la derecha */
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1em;
+    text-align: left;
+    gap: 10px;
+}
+
+/* El texto y la imagen juntos, la papelera a la derecha */
+#lista-carrito .item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botón eliminar sin margen extra */
+#lista-carrito button {
+    margin-left: 0;
+}
+
+/* Botones del carrito más grandes y centrados */
+#vaciar-carrito,
+#finalizar-compra {
+    width: 90%;
+    max-width: 320px;
+    font-size: 1.15em;
+    margin: 10px auto;
+    display: block;
 }
 
 /* título de productos */
@@ -172,4 +279,194 @@ footer {
     padding: 10px;
     background-color: #333;
     color: white;
+}
+
+/* Ajusta el tamaño de los cuadros de producto */
+.producto {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 480px; /* Más alto para más contenido */
+    width: 260px;  /* Más ancho para evitar desbordes */
+    box-sizing: border-box;
+    transition: box-shadow 0.2s;
+    justify-content: flex-start;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Ajusta el tamaño del input de cantidad y centra solo el input */
+.producto input[type="number"] {
+    width: 60px;
+    height: 36px;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 10px auto 16px auto;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* Elimina el centrado de todos los divs dentro de .producto para evitar afectar otros elementos */
+.producto .cantidad-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 0;
+}
+
+/* Ajusta los botones + y - para que sean iguales al input */
+.producto button[type="button"] {
+    width: 48px;
+    height: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 0 2px;
+}
+
+.producto button[type="button"]:hover {
+    background: #e0e0e0;
+}
+
+/* Evita que la información se salga del cuadro */
+.producto h4,
+.producto .descripcion-producto,
+.producto p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Centra el selector de cantidad (botones +, - e input) dentro del cuadro de producto */
+.producto div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Sección de contacto centrada y con más espacio lateral */
+#contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px 50px 32px; /* Más espacio a los lados */
+    margin: 40px auto 0 auto;
+    max-width: 500px; /* Un poco más ancho */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    box-sizing: border-box;
+}
+
+#contacto h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.5em;
+    color: #222;
+}
+
+#formularioContacto {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+#formularioContacto label {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#formularioContacto input,
+#formularioContacto textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#formularioContacto button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 0;
+    background: linear-gradient(90deg, #ff9800, #e91e63, #3f51b5, #4caf50);
+    background-size: 300% 100%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-position 0.5s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+#formularioContacto button[type="submit"]:hover {
+    background-position: right center;
+    box-shadow: 0 4px 16px rgba(76,175,80,0.15);
+}
+
+/* Contenedor principal en fila para pantallas grandes */
+.main-flex {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 1300px;
+    box-sizing: border-box;
+}
+
+/* Que cada sección ocupe el mismo ancho y se adapte */
+#carrito, #contacto {
+    flex: 1 1 400px;
+    min-width: 320px;
+    max-width: 600px;
+}
+
+/* Total del carrito con más espacio y centrado */
+#total-carrito {
+    width: 100%;
+    max-width: 640px;
+    margin: 18px auto 24px auto; /* Aumenta el espacio inferior */
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #222;
+    letter-spacing: 1px;
+    padding-right: 10px;
+}
+
+/* Responsive: en móvil, uno debajo del otro */
+@media (max-width: 900px) {
+    .main-flex {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    #carrito, #contacto {
+        max-width: 95vw;
+    }
 }
